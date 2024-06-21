@@ -2,7 +2,7 @@
     <lightning-card title="New Work Type">
 
     <div class="slds-p-around_medium">
-        <lightning-record-edit-form object-api-name={productItem} onsuccess={handleWorkTypeCreate}>
+        <lightning-record-edit-form object-api-name={productItem} onsuccess={handleSkillCreate}>
             <lightning-messages></lightning-messages>
             <div class="slds-grid">
               <div class="slds-col slds-size_1-of-2">
@@ -11,14 +11,13 @@
                 <lightning-input-field field-name={quantityOnHand}></lightning-input-field>
                 <lightning-input-field field-name={quantityUnitOfMeasure}></lightning-input-field>
                 <lightning-input-field field-name={serialNumber}></lightning-input-field>
-
               </div>
               <div class="slds-col slds-size_1-of-2">
                 <!-- More lightning-input-field components here -->
               </div>
             </div>
             <div class="slds-col" style="margin-left: 10px;">
-                <lightning-button type="submit" variant="brand" label="Next"></lightning-button>
+                <lightning-button type="submit" variant="brand" label="Save"></lightning-button>
             </div>
           </lightning-record-edit-form>
     </div>

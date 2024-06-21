@@ -3,14 +3,16 @@
     <lightning-card title="New Product Req">
 
     <div class="slds-p-around_medium">
-        <lightning-record-edit-form object-api-name={productReq} onsuccess={handleProductCreate}>
+        <lightning-record-edit-form object-api-name={workOrder} onsuccess={handleWorkOrderCreate}>
             <lightning-messages></lightning-messages>
             <div class="slds-grid">
               <div class="slds-col slds-size_1-of-2">
-                <lightning-input-field field-name={parentRecord} value={workId}></lightning-input-field>
-                <lightning-input-field field-name={productReqId}></lightning-input-field>
-                <lightning-input-field field-name={productReqQuantity}></lightning-input-field>
-                <lightning-input-field field-name={productReqQuantityUnit}></lightning-input-field>
+                <lightning-input-field field-name={status}></lightning-input-field>
+                <lightning-input-field field-name={workTypeID}></lightning-input-field>
+                <lightning-input-field field-name={priotyty}></lightning-input-field>
+                <lightning-input-field field-name={subject}></lightning-input-field>
+                <lightning-input-field field-name={description}></lightning-input-field>
+
               </div>
               <div class="slds-col slds-size_1-of-2">
                 <!-- More lightning-input-field components here -->

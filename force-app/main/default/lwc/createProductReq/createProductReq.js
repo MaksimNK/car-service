@@ -1,6 +1,9 @@
 import { LightningElement,api, wire} from 'lwc';
 import { NavigationMixin } from "lightning/navigation";
 
+import LightningModal from 'lightning/modal';
+
+
 import { getRecord } from "lightning/uiRecordApi";
 
 import PRODUCT_REQ from '@salesforce/schema/ProductRequired'
@@ -9,7 +12,7 @@ import PRODUCT_REQ_QUANTITY from '@salesforce/schema/ProductRequired.QuantityReq
 import PRODUCT_REQ_QUANTITY_UNIT from '@salesforce/schema/ProductRequired.QuantityUnitOfMeasure'
 import PARENT_RECORD from '@salesforce/schema/ProductRequired.ParentRecordId'
 
-import createProductReq from 'c/createProductItem';
+import createProductItem from 'c/createProductItem';
 
 //ProductRequired
 //ParentRecordId
@@ -30,7 +33,13 @@ export default class CreateProductReq extends LightningModal {
 
     
 
-    handleProductCreate() {
+    handleProductCreate(event) {
+
+        const { target } = event;
+        const { id } = target.dataset;
+        this.close(id);
+
+
 
         console.log(this.workType);
         const modal =  createProductItem.open({
@@ -39,7 +48,7 @@ export default class CreateProductReq extends LightningModal {
             workId: this.workId,
         });
 
-
+       
     }
 
     

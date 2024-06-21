@@ -32,13 +32,20 @@ export default class CreateSkillReq extends LightningModal{
     recordReq = RECORD_REQ;
     skillLevel = SKILL_LEVEL;
 
-    handleSkillCreate() {
+    handleSkillCreate(event) {
+
+        console.log(this.workId);
+
+        const { target } = event;
+        const { id } = target.dataset;
+        this.close(id);
+
 
         const modal =  createProductReq.open({
             size: 'Large',
             description: 'Modal',
             workId: this.workId
-        });
+        }); 
 
     }
 

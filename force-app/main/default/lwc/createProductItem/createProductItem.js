@@ -7,6 +7,10 @@ import QUANTITY_ON_HAND from '@salesforce/schema/ProductItem.QuantityOnHand'
 import QUANTITY_UNIT_OF_MEASURE from '@salesforce/schema/ProductItem.QuantityUnitOfMeasure'
 import SERIAL_NUMBER from '@salesforce/schema/ProductItem.SerialNumber'
 
+import LightningModal from 'lightning/modal';
+
+import { CloseActionScreenEvent } from 'lightning/actions';
+
 
 //ProductItem
 //Product2Id
@@ -28,13 +32,12 @@ export default class CreateProductItem extends LightningModal {
     serialNumber = SERIAL_NUMBER;
 
 
-    handleSkillCreate() {
+    handleSkillCreate(event) {
 
-        const modal =  createProductReq.open({
-            size: 'Large',
-            description: 'Modal',
-            workId: workId
-        });
+        const { target } = event;
+        const { id } = target.dataset;
+        this.close(id);
+
 
     }
 
